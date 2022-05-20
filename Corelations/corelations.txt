@@ -1,0 +1,45 @@
+#include<stdio.h>
+
+//Mathematically correlation between two signals s[n] and h[n]
+void main()
+{
+    //cor arry store corelation betw orginal signal arry and shift_signal arry when shift is applied 
+    int signal[], shift_signal[], cor[], shift[];
+
+    //define signal and shit_signal
+    int i=0,n=0;
+    getch();
+    printf("Enter value for number of shift\n");
+    scanf("%d",&n);
+    printf("Enter value for signal\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&signal);
+    }
+
+    printf("Enter value for shift_signal\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&shift_signal);
+    }
+
+    printf("Enter value for shift\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&shift);
+    }                                                                                                                                                                      for(i=0;i<n;i++)
+     {
+         printf("the signal is [%d]\n",signal);
+         printf("the shift_signal is [%d]\n",shift_signal);
+         printf("the shift is [%d]\n",shift);
+     }
+
+    //Selecting the time shift for shift_signal
+
+}
+
+
+for i in shift
+  for j in shift signal
+    
+      
