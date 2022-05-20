@@ -14,7 +14,7 @@ void main()
     for(i=0;i<x;i++)
     {   for(j=0;j<y;j++)
             {
-                scanf("%d",&signal);
+                scanf("%d",&signal[i][j]);
              }
     }
 
@@ -22,7 +22,7 @@ void main()
     for(i=0;i<x;i++)
     {   for(j=0;j<y;j++)
             {
-                scanf("%d",&shift_signal);
+                scanf("%d",&shift_signal[i][j]);
              }
     }
 
@@ -30,7 +30,7 @@ void main()
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&shift);
+        scanf("%d",&shift[i]);
     }                                                                                                                                                                      for(i=0;i<n;i++)
      {
          printf("the signal is [%d]\n",signal);
@@ -49,7 +49,12 @@ for (i=0;i<n;i++)
     for(j=0;j<x;j++)
     {
        shift_signal[0][j]=(shift_signal[0][j]-s);
-       }
+       if (shift_signal[0][j]==signal[0][j])
+            {
+                cor[j]+=shift_signal[j][1]*signal[j][1];
+            }
+     }
+     print("The corelation signal is %d",cor[j]);
 }
   
     
