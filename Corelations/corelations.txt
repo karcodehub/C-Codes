@@ -45,13 +45,13 @@ void main()
 
 for (i=0;i<n;i++)
 {   
-    s=shift[i];
-    for(j=0;j<x;j++)
+    s=shift[i];//Selecting the time shift for shift_signal
+    for(j=0;j<x;j++) //to access for shift_signal arry
     {
-       shift_signal[0][j]=(shift_signal[0][j]-s);
-       if (shift_signal[0][j]==signal[0][j])
+       shift_signal[j][0]=(shift_signal[j][0]-s); // h[m − n] accessing only x axis value where as y axis is constant
+       if (shift_signal[j][0]==signal[j][0])
             {
-                cor[j]+=shift_signal[j][1]*signal[j][1];
+                cor[j]+=shift_signal[j][1]*signal[j][1]; //s[m] · h[m − n] accessing only y axis value to multiply
             }
      }
      print("The corelation signal is %d",cor[j]);
