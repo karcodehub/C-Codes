@@ -4,26 +4,30 @@
 void main()
 {
     //cor arry store corelation betw orginal signal arry and shift_signal arry when shift is applied 
-    int signal[], shift_signal[], cor[], shift[];
+    int signal[][], shift_signal[][], cor[], shift[];
 
     //define signal and shit_signal
-    int i=0,n=0;
+    int i=0,n=0, x=0,y=0;
     getch();
-    printf("Enter value for number of shift\n");
-    scanf("%d",&n);
-    printf("Enter value for signal\n");
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&signal);
+    printf("Enter value for signal in x rows and y colms\n");
+    scanf("%d%d",&x,&y);
+    for(i=0;i<x;i++)
+    {   for(j=0;j<y;j++)
+            {
+                scanf("%d",&signal);
+             }
     }
 
     printf("Enter value for shift_signal\n");
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&shift_signal);
+    for(i=0;i<x;i++)
+    {   for(j=0;j<y;j++)
+            {
+                scanf("%d",&shift_signal);
+             }
     }
 
-    printf("Enter value for shift\n");
+     printf("Enter value for number of shift\n");
+    scanf("%d",&n);
     for(i=0;i<n;i++)
     {
         scanf("%d",&shift);
@@ -39,7 +43,7 @@ void main()
 }
 
 
-for i in shift
-  for j in shift signal
+for (k=0;k<n;k++)
+  for(x=0;x<
     
       
