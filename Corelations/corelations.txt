@@ -7,7 +7,7 @@ void main()
     int signal[][], shift_signal[][], cor[], shift[];
 
     //define signal and shit_signal
-    int i=0,n=0, x=0,y=0;
+    int i=0,j=0,n=0, x=0,y=0;
     getch();
     printf("Enter value for signal in x rows and y colms\n");
     scanf("%d%d",&x,&y);
@@ -43,7 +43,7 @@ void main()
 }
 
 
-for (k=0;k<n;k++)
-  for(x=0;x<
+for (i=0;i<n;i++)
+  for(j=0;j<
     
       
