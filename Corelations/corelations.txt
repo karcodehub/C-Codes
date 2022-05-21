@@ -23,6 +23,8 @@ void main()
     {   for(j=0;j<y;j++)
             {
                 scanf("%d",&shift_signal[i][j]);
+		temp_shift[i][j]=shift_signal[i][j];
+
              }
     }
 
@@ -48,12 +50,21 @@ for (i=0;i<n;i++)
     s=shift[i];//Selecting the time shift for shift_signal
     for(j=0;j<x;j++) //to access for shift_signal arry
     {
-       shift_signal[j][0]=(shift_signal[j][0]-s); // h[m − n] accessing only x axis value where as y axis is constant
-       if (shift_signal[j][0]==signal[j][0])
-            {
-                cor[j]+=shift_signal[j][1]*signal[j][1]; //s[m] · h[m − n] accessing only y axis value to multiply
-            }
+       temp_shift[j][0]=(shift_signal[j][0]+s); // h[m − n] accessing only x axis value where as y axis is constant
+       
      }
+	for(k=0;k<x;k++)
+	{
+	  temp=temp_shift[k][0];
+	  for(j=0;j<x;j++)
+		{ 	
+		
+	         if (temp_shift[k][0]==signal[j][0])
+                  {
+                	cor[j]+=shift_signal[j][1]*signal[j][1]; //s[m] · h[m − n] accessing only y axis value to multiply
+            	  }
+		}
+}
      print("The corelation signal is %d",cor[j]);
 }
   
