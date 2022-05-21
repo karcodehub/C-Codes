@@ -61,7 +61,7 @@ for (i=0;i<n;i++)
 		
 	         if (temp==signal[j][0])
                   {
-                	cor[j]+=temp_shift[k][k]*signal[j][1]; //s[m] · h[m − n] accessing only y axis value to multiply
+                	cor[i]+=temp_shift[k][k]*signal[j][1]; //s[m] · h[m − n] accessing only y axis value to multiply
             	  }
 		}
 }
