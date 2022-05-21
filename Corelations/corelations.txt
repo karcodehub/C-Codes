@@ -59,9 +59,9 @@ for (i=0;i<n;i++)
 	  for(j=0;j<x;j++)
 		{ 	
 		
-	         if (temp_shift[k][0]==signal[j][0])
+	         if (temp==signal[j][0])
                   {
-                	cor[j]+=shift_signal[j][1]*signal[j][1]; //s[m] · h[m − n] accessing only y axis value to multiply
+                	cor[j]+=temp_shift[k][k]*signal[j][1]; //s[m] · h[m − n] accessing only y axis value to multiply
             	  }
 		}
 }
