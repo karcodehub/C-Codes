@@ -15,7 +15,7 @@ main()
     for(rows=0;rows<no_row;rows++)
     {   for(cols=0;cols<2;cols++)
             {
-                scanf("%d",&signal[i][j]);
+                scanf("%d",&signal[rows][cols]);
              }
     }
 
@@ -23,24 +23,25 @@ main()
     for(rows=0;rows<no_row;rows++)
     {   for(cols=0;cols<2;cols++)
             {
-                scanf("%d",&shift_signal[i][j]);
+                scanf("%d",&shift_signal[rows][cols]);
 
              }
     }
 
-     printf("Enter value for number of shift\n");
+    printf("Enter value for number of shift\n");
+    scanf("%d", &no_shift);
     for(rows=0;rows<no_shift;rows++)
     {
-        scanf("%d",&shift[i]);
-    }                                                                                                                                                                      for(i=0;i<n;i++)
+        scanf("%d",&shift[rows]);
+    }                                                                                                                                                                     
     
     printf("the signal is :");
     
-    for(rows=0;rows<n;rows++)
+    for(rows=0;rows<no_row;rows++)
     {   for(cols=0;cols<2;cols++)
             {
      
-         printf(" [%d]",signal[i][j]);
+         printf(" [%d]",signal[rows][cols]);
          //printf("[%d]",shift_signal[i][j]);
      }    
      }
@@ -50,10 +51,16 @@ main()
             {
      
          //printf(" [%d]",signal[i][j]);
-         printf("[%d]",shift_signal[i][j]);
+         printf("[%d]",shift_signal[rows][cols]);
      }    
      }
-     
+    //Selecting the time shift for shift_signal
+
+ 
+
+}
+
+   
      
 for (i=0;i<n;i++)
 {   
