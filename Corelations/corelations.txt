@@ -1,49 +1,60 @@
-#include<stdio.h>
-
-//Mathematically correlation between two signals s[n] and h[n]
-void main()
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+main()
 {
     //cor arry store corelation betw orginal signal arry and shift_signal arry when shift is applied 
-    int signal[][], shift_signal[][], cor[], shift[];
+    int signal[10][10], shift_signal[11][11],temp_shift[11][11], cor[11], shift[11];
 
     //define signal and shit_signal
     int i=0,j=0,n=0,s=0, x=0,y=0;
     getch();
-    printf("Enter value for signal in x rows and y colms\n");
-    scanf("%d%d",&x,&y);
-    for(i=0;i<x;i++)
-    {   for(j=0;j<y;j++)
+    printf("Enter value for signal in x rows\n");
+    scanf("%d",&n);
+    
+    for(i=0;i<n;i++)
+    {   for(j=0;j<2;j++)
             {
                 scanf("%d",&signal[i][j]);
              }
     }
 
     printf("Enter value for shift_signal\n");
-    for(i=0;i<x;i++)
-    {   for(j=0;j<y;j++)
+    for(i=0;i<n;i++)
+    {   for(j=0;j<2;j++)
             {
                 scanf("%d",&shift_signal[i][j]);
-		temp_shift[i][j]=shift_signal[i][j];
 
              }
     }
 
      printf("Enter value for number of shift\n");
-    scanf("%d",&n);
     for(i=0;i<n;i++)
     {
         scanf("%d",&shift[i]);
     }                                                                                                                                                                      for(i=0;i<n;i++)
-     {
-         printf("the signal is [%d]\n",signal);
-         printf("the shift_signal is [%d]\n",shift_signal);
-         printf("the shift is [%d]\n",shift);
+    
+    printf("the signal is :");
+    for(i=0;i<n;i++)
+    {   for(j=0;j<2;j++)
+            {
+     
+         printf(" [%d]",signal[i][j]);
+         //printf("[%d]",shift_signal[i][j]);
+     }    
      }
-
+    printf("the shift signal is :");
+    for(i=0;i<n;i++)
+    {   for(j=0;j<2;j++)
+            {
+     
+         //printf(" [%d]",signal[i][j]);
+         printf("[%d]",shift_signal[i][j]);
+     }    
+     }
     //Selecting the time shift for shift_signal
 
 }
-
 
 for (i=0;i<n;i++)
 {   
