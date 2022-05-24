@@ -56,15 +56,15 @@ printf("the temp_shift signal is :");
      }
 }
 
-_________________________________________________________________________________________________________________________
-    #include <stdio.h>
+_________________________________________________________________________________________________________________________Initialised array_______________
+#include <stdio.h>
 #include <conio.h>
 #include <math.h>
 main()
 {
     //cor arry store corelation betw orginal signal arry and shift_signal arry when shift is applied 
     int signal[3][2]={{0,2},{1,-1},{2,1}}, shift_signal[3][2]={{0,-1},{1,1},{2,2}},
-    temp_shift[3][2], shift[1]={-2}, cor[3];
+    temp_shift[3][2], shift[1]={-2}, cor[1]={0};
 
     //define signal and shit_signal
     int loop1=0,loop2=0,no_row=3,no_shift=1,shift_val=0,k=0,temp_shift_row_val=0, rows=0,cols=0;
@@ -106,7 +106,7 @@ main()
 
 
 printf("shift_val %d\n",shift_val);
-printf("\nthe temp_shift signal is :");
+printf("\nthe temp_shift signal is :\n");
     for(rows=0;rows<no_row;rows++)
     {   for(cols=0;cols<2;cols++)
             {
@@ -116,22 +116,26 @@ printf("\nthe temp_shift signal is :");
      }    
      }
      
-for (loop1=0;loop1<no_shift;loop1++)
+for (loop1=0;loop1<no_row;loop1++)
      {
          temp_shift_row_val=temp_shift[loop1][0];
          
          for(rows=0;rows<no_row;rows++)
-		{ 	printf("%d is comparing %d\n",temp_shift_row_val,signal[rows][0] );
+		{ 	printf("\n%d is comparing %d\n",temp_shift_row_val,signal[rows][0] );
 		
 	         if (temp_shift_row_val==signal[rows][0])
                   {
-                	cor[loop1]+=temp_shift[loop1][loop1]*signal[rows][1]; //s[m] · h[m − n] accessing only y axis value to multiply
-            	  }
+                	cor[loop1]=temp_shift[loop1][loop1]*signal[rows][1]; //s[m] · h[m − n] accessing only y axis value to multiply
+            	        printf("The corelation signal is %d",cor[loop1]); 
+                      
+                  }
 		}
 }
-   printf("The corelation signal is %d",cor[loop1]);  
+    
 
      
      
 }
+
+
 
