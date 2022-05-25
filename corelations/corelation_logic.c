@@ -136,6 +136,72 @@ for (loop1=0;loop1<no_row;loop1++)
      
      
 }
+****************************************************************************************************************************
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+int main()
+{
+    //cor arry store corelation betw orginal signal arry and shift_signal arry when shift is applied 
+    int signal[3][2]={{0,2},{1,-1},{2,1}}, shift_signal[3][2]={{0,-1},{1,1},{2,2}},
+    temp_shift[3][2], shift[1]={-2}, cor[1]={0};
+
+    //define signal and shit_signal
+    int loop1=0,loop2=0,no_row=3,no_shift=1,shift_val=0,k=0,temp_shift_row_val=0, rows=0,cols=0;
+    getch();
+    printf("the signal is :");
+    for(rows=0;rows<no_row;rows++) {
+        for(cols=0;cols<2;cols++) {
+         printf(" [%d]",signal[rows][cols]);
+        }    
+    }
+    printf("the shift signal is :");
+    for(rows=0;rows<no_row;rows++) {
+        for(cols=0;cols<2;cols++) {
+            temp_shift[rows][cols]=shift_signal[rows][cols];
+            printf("[%d]",shift_signal[rows][cols]);
+        }    
+    }
+    //Selecting the time shift for shift_signal
+    printf("the shift is :");
+    for(rows=0;rows<no_shift;rows++) {
+        printf("%d,",shift[rows]);
+    }
+    for (loop1=0;loop1<no_shift;loop1++) {   
+        shift_val=shift[loop1];//Selecting the time shift for shift_signal
+        //to access for shift_signal arry
+        for(rows=0;rows<no_row;rows++) {
+       temp_shift[rows][0]=(shift_signal[rows][0]+shift_val); // h[m − n] accessing only x axis value where as y axis is constant
+       }
+    }
+    printf("shift_val %d\n",shift_val);
+    printf("\n\n***********************\n\n");
+    printf("\nthe temp_shift signal is :\n");
+    for(rows=0;rows<no_row;rows++) {
+        for(cols=0;cols<2;cols++) {
+            printf("[%d]",temp_shift[rows][cols]);
+        }    
+    }
+    printf("\n\n***********************\n\n");
+    printf("\n\n******************* no_row : [%d] :\n\n", no_row);
+    for (loop1=0;loop1<no_row;loop1++) {
+        temp_shift_row_val=temp_shift[loop1][0];
+        for(rows=0;rows<no_row;rows++) {
+	        if (temp_shift_row_val==signal[rows][0]) {
+                if(loop1 < 2) {
+                    cor[rows]= (temp_shift[loop1][loop1]*signal[rows][1]); //s[m] · h[m − n] accessing only y axis value to multiply
+                }
+                else {
+                    cor[rows]= (temp_shift[loop1][loop1-1]*signal[rows][1]); 
+                }
+            }
+	    }
+    }
+
+    for(int i = 0 ; i < rows ; i++) { 
+        printf("\nCor[%d] is [%d]\n", i, cor[i]);
+    }
+}
 
 
 
