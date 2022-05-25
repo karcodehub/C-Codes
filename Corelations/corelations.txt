@@ -86,4 +86,11 @@ for (i=0;i<n;i++)
 }
   
     
+    _________________________________________NOTES_________________________________
+
+Hi 
+
+The Signals s(m) and h(m) are considered as a 2D matrix, the shifts are in 1D array. To calculate data correctness at receiver we perfrom corelations between two signals s(m) & h(m) applying shifts. The attached excel sheet depicts the discrete digital in matrix form corodinates are values of signal.  
+
+Please note that this pogramm can be improved in all aspects like time and sapce effecisncy, and also more presentable for user. As I have tried the easily understandable with stright forward brute force method. 
       
