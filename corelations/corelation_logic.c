@@ -189,19 +189,16 @@ int main()
         for(rows=0;rows<no_row;rows++) {
 	        if (temp_shift_row_val==signal[rows][0]) {
                 if(loop1 < 2) {
-                    cor[rows]= (temp_shift[loop1][loop1]*signal[rows][1]); //s[m] · h[m − n] accessing only y axis value to multiply
+                    cor[0]= (temp_shift[loop1][loop1]*signal[rows][1]); //s[m] · h[m − n] accessing only y axis value to multiply
                 }
                 else {
-                    cor[rows]= (temp_shift[loop1][loop1-1]*signal[rows][1]); 
+                    cor[0]= (temp_shift[loop1][loop1-1]*signal[rows][1]); 
                 }
             }
 	    }
     }
 
-    for(int i = 0 ; i < rows ; i++) { 
+    for(int i = 0 ; i < 1 ; i++) { 
         printf("\nCor[%d] is [%d]\n", i, cor[i]);
     }
 }
-
-
-
