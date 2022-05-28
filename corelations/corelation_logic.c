@@ -303,29 +303,7 @@ ____________________________________________________________________________
 	
 	
 	
-	***************************************************************************************************************************************************
-
-Conversation opened. 2 messages. 1 message unread. 
-
-Skip to content
-Using Gmail with screen readers
-1 of 9,082
-pFA
-Inbox
-
-Karthik Lokesh
-AttachmentsWed, May 25, 7:30 PM (3 days ago)
-On Sat, May 21, 2022 at 4:23 PM Karthik Lokesh <karthik.yajaman@gmail.com> wrote: On Sat, May 21, 2022 at 4:08 PM Karthik Lokesh <karthik.yajaman@gmail.com> wro
-
-Karthik Lokesh
-Attachments
-5:33 PM (1 hour ago)
-to me
-
-draft of all three
-
-3 Attachments
-4 deleted messages in this conversation. View messages or delete forever.
+***************************************************************************************************************************************************
 #include <stdio.h>
 #include <conio.h>
 #include <math.h>
@@ -471,13 +449,7 @@ int main()
        printf("Correlational value for shift [%d] is [%d]\n",shift[i], cor[i]);
     }
     printf(" The summation of corelation=%d",corelation);
-}	
-	
-	
-	
-	
-	
-	
+}
 	
 	
 	
