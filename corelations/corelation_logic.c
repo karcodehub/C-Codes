@@ -299,4 +299,185 @@ int main()
        printf("\nCor[%d] is [%d]\n",shift[0], cor);
     }
 }
-____________________________________________________________________________
+____________________________________________________________________________          
+	
+	
+	
+	***************************************************************************************************************************************************
+
+Conversation opened. 2 messages. 1 message unread. 
+
+Skip to content
+Using Gmail with screen readers
+1 of 9,082
+pFA
+Inbox
+
+Karthik Lokesh
+AttachmentsWed, May 25, 7:30 PM (3 days ago)
+On Sat, May 21, 2022 at 4:23 PM Karthik Lokesh <karthik.yajaman@gmail.com> wrote: On Sat, May 21, 2022 at 4:08 PM Karthik Lokesh <karthik.yajaman@gmail.com> wro
+
+Karthik Lokesh
+Attachments
+5:33 PM (1 hour ago)
+to me
+
+draft of all three
+
+3 Attachments
+4 deleted messages in this conversation. View messages or delete forever.
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+int main()
+{
+    //cor arry store corelation betw orginal signal arry and shift_signal arry when shift is applied 
+    int signal[3][2], shift_signal[3][2],
+    temp_shift[3][2], shift[5], cor[5]={0};//={{0,2},{1,-1},{2,1}},{{0,-1},{1,1},{2,2}},={-2,-1,0,1,2}
+
+    //define signal and shit_signal
+    int loop1=0,corelation=0,no_row=3,no_shift,shift_val=0,temp_shift_loop=0,temp_shift_row_val=0, rows=0,cols=0;
+    getch();
+    printf("Enter no of shift\n");
+    scanf("%d",&no_shift);
+    printf(" Enter the value for no of shift\n");
+    for(int i=0;i<no_shift;i++) {
+        scanf("%d",&shift[i]);
+    }
+    
+     printf("Enter value for signal in x rows\n");
+    scanf("%d",&no_row);
+    printf("Enter signal value in means of x,y\n");
+    for(rows=0;rows<no_row;rows++)
+    {   
+                scanf("%d,%d",&signal[rows][0],&signal[rows][1]);
+             
+    }
+
+    printf("Enter value for shift_signal value in means of x,y \n");
+    for(rows=0;rows<no_row;rows++)
+    {   
+        scanf("%d,%d",&shift_signal[rows][0],&shift_signal[rows][1]);
+    }
+
+    printf("the signal is :\n");
+    for(rows=0;rows<no_row;rows++) {
+        printf("(");
+        for(cols=0;cols<2;cols++) { 
+         printf("%d",signal[rows][cols]);
+         if(cols==0)
+         {
+             printf(",");
+         }
+         else
+         {printf(")\n");}
+        }    
+    }
+    printf("\nthe shift signal is :\n");
+    for(rows=0;rows<no_row;rows++) {
+        printf("(");
+        for(cols=0;cols<2;cols++) {
+            temp_shift[rows][cols]=shift_signal[rows][cols];
+            printf("%d",shift_signal[rows][cols]);
+            if(cols==0)
+         {
+             printf(",");
+         }
+         else
+         {printf(")\n");}
+        }    
+    }
+    //printf("\nthe shift signal is temp_shift[2][2-1]:%d\n",temp_shift[2][(2-1)]);
+    //Selecting the time shift for shift_signal
+    printf("\nthe shift is :\n");
+    for(rows=0;rows<no_shift;rows++) {
+        printf("%d,",shift[rows]);
+    }
+    
+    //printf("shift_val %d\n",shift_val);
+    printf("\n\n***********************\n\n");
+    printf("\nthe temp_shift signal is :\n");
+    for(rows=0;rows<no_row;rows++) {
+        printf("(");
+        for(cols=0;cols<2;cols++) {
+            printf("%d",temp_shift[rows][cols]);
+            if(cols==0)
+         {
+             printf(",");
+         }
+         else
+         {printf(")\n");}
+        }    
+    }
+    printf("\n\n***********************\n\n");
+    //printf("\n\n******************* no_row : [%d] :\n\n", no_row);
+    
+    for(int main_loop=0;main_loop<no_shift;main_loop++)
+    {
+          
+        shift_val=shift[main_loop];//Selecting the time shift for shift_signal
+        printf("\n\n\n\nthe shift=%d and temp shifted signal is :\n",shift_val);//to access for shift_signal arry
+        for(rows=0;rows<no_row;rows++) {
+            printf("(");
+            temp_shift[rows][0]=(shift_signal[rows][0]+shift_val);
+            for(cols=0;cols<2;cols++) {
+            printf("%d",temp_shift[rows][cols]);
+            if(cols==0)
+         {
+             printf(",");
+         }
+         else
+         {printf(")\n");}
+         }// h[m − n] accessing only x axis value where as y axis is constant
+        }
+           
+    
+    for (loop1=0;loop1<no_row;loop1++) {
+        temp_shift_row_val=temp_shift[loop1][0];
+        for(rows=0;rows<no_row;rows++) {
+            //printf("\nIn row=%d X cordonate of Temp shift signal value %d is comparing %d coressponding Signal value\n",loop1,temp_shift_row_val,signal[rows][0] );
+	        if (temp_shift_row_val==signal[rows][0]) {
+	            //printf("\n ##################________Overlapping occurs________############ \n");
+                if(loop1<1)
+                {
+                    //printf("\n val of cor[%d] before multiplication is %d\n",main_loop,cor[main_loop]);
+                    //printf("\n the multiplication magnitude of signal is %d * %d  and storing corelation",temp_shift[loop1][loop1+1],signal[rows][1]);
+                    cor[main_loop]+= (temp_shift[loop1][loop1+1]*signal[rows][1]); //s[m] · h[m − n] accessing only y axis value to multiply
+                    //printf("\nloop1=%d, temp_shift[loop1][loop1+1]=%d and signal[rows][1]=%d#  cor=%d",loop1,temp_shift[loop1][loop1+1],signal[rows][1],cor);
+                }
+                else if(loop1>1)
+                {
+                     //printf("\n val of cor[%d] before multiplication is %d\n",main_loop,cor[main_loop]);
+                     //printf("\n the multiplication magnitude of signal is %d * %d  and storing corelation\n",temp_shift[loop1][loop1-1],signal[rows][1]);
+                    //printf("\ntemp_shift[loop1-1=%d][loop=%d]=%d and signal[rows][1]=%d ==%d (cor=%d)",loop1,(loop1-1),temp_shift[(loop1)][loop1-1],signal[rows][1],(temp_shift[loop1][(loop1-1)]*signal[rows][1]),cor);
+                    cor[main_loop]+= (temp_shift[loop1][(loop1-1)]*signal[rows][1]);
+                    //printf("\nval of cor[%d] after multiplication is %d\n",main_loop,cor[main_loop]);  
+                }
+                else
+                {
+                    //printf("\nval of cor[%d] before multiplication is %d\n",main_loop,cor[main_loop]);
+                    //printf("\n the multiplication magnitude of signal is %d * %d  and storing corelation\n",temp_shift[loop1][loop1-1],signal[rows][1]);
+                    cor[main_loop]+= (temp_shift[loop1][loop1]*signal[rows][1]); //s[m] · h[m − n] accessing only y axis value to multiply
+                    //printf("\nval of cor[%d] after multiplication is %d\n",main_loop,cor[main_loop]); 
+                    //printf("\nloop1=%d, temp_shift[loop1][loop1]=%d and signal[rows][1]=%d#  cor=%d",loop1,temp_shift[loop1][loop1],signal[rows][1],cor);
+                }
+            }
+	    }
+    }printf("\n\n\n\n**********____Correlational value for shift [%d] is [%d]___________*******\n",shift[main_loop], cor[main_loop]);
+}
+
+    for(int i = 0 ; i < no_shift ; i++) { 
+         corelation += cor[i];
+       printf("Correlational value for shift [%d] is [%d]\n",shift[i], cor[i]);
+    }
+    printf(" The summation of corelation=%d",corelation);
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
