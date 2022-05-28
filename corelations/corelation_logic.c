@@ -230,7 +230,7 @@ int main()
 
     //define signal and shit_signal
     int loop1=0,corelation=0,no_row=3,no_shift=1,shift_val=0,match=0,temp_shift_row_val=0, rows=0,cols=0;
-    getch();
+    getch(); /*If possible remove getch()*/
     printf("the signal is :\n");
     for(rows=0;rows<no_row;rows++) {
         for(cols=0;cols<2;cols++) {
@@ -254,7 +254,7 @@ int main()
         shift_val=shift[loop1];//Selecting the time shift for shift_signal
         //to access for shift_signal arry
         for(rows=0;rows<no_row;rows++) {
-       temp_shift[rows][0]=(shift_signal[rows][0]+shift_val); // h[m − n] accessing only x axis value where as y axis is constant
+        	temp_shift[rows][0]=(shift_signal[rows][0]+shift_val); // h[m − n] accessing only x axis value where as y axis is constant
        }
     }
     printf("shift_val %d\n",shift_val);
